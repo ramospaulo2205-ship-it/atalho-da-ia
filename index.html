@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O Atalho da IA — Guia Prático de Prompts para Iniciantes</title>
+<meta name="description" content="22 prompts prontos para copiar, preencher e ganhar tempo no dia a dia, mesmo começando do zero. Funciona com ChatGPT, Claude e Gemini. R$ 19,90.">
+<meta property="og:title" content="O Atalho da IA — Guia Prático de Prompts para Iniciantes">
+<meta property="og:description" content="22 prompts prontos para copiar, preencher e ganhar tempo no dia a dia. De bônus, uma planilha com 55 prompts.">
+<meta property="og:image" content="og.jpg">
+<meta property="og:type" content="product">
+<meta name="theme-color" content="#131139">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#131139; --navy-2:#1d1954; --navy-3:#262070;
+  --cyan:#22c2e6; --violet:#7b6cf0;
+  --ink:#16143a; --text:#3b3a55; --muted:#5d5c78;
+  --paper:#ffffff; --paper-2:#f4f4fa; --line:#e3e2ef;
+  --on-dark:#ffffff; --on-dark-2:#c9c7ea;
+  --radius:14px; --wrap:1080px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--text);font:400 17px/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3{font-family:Montserrat,system-ui,sans-serif;color:var(--ink);line-height:1.15;margin:0}
+h2{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:800}
+h3{font-size:1.1rem;font-weight:700}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 16px}
+.eyebrow{font:600 .78rem/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#076a80}
+.dark .eyebrow{color:var(--cyan)}
+section{padding:72px 0}
+.dark{background:var(--navy);color:var(--on-dark-2)}
+.dark h1,.dark h2,.dark h3{color:var(--on-dark)}
+
+/* botão */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:52px;padding:14px 28px;border-radius:999px;
+  background:var(--cyan);color:var(--navy);font:800 1.05rem/1.2 Montserrat,sans-serif;text-decoration:none;
+  box-shadow:0 2px 6px rgba(0,0,0,.18);transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 14px rgba(0,0,0,.22)}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.btn svg{width:20px;height:20px}
+
+/* topo */
+.hero{position:relative;overflow:hidden;padding:56px 0 72px}
+.hero::before{content:"";position:absolute;right:-30vw;top:-30vw;width:70vw;height:70vw;border-radius:50%;background:var(--navy-2)}
+.hero .grid{position:relative;display:grid;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,9vw,4.4rem);font-weight:800;letter-spacing:-.01em;text-transform:uppercase}
+.hero h1 span{color:var(--cyan);display:block}
+.hero .lead{margin-top:18px;font-size:1.15rem;color:var(--on-dark-2);max-width:34ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;padding:0;list-style:none}
+.chips li{border:1px solid #3a3580;border-radius:999px;padding:6px 14px;font-size:.88rem;color:var(--on-dark)}
+.buy{margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px}
+.price{color:var(--on-dark);font:800 2rem/1 Montserrat,sans-serif}
+.price small{display:block;font:500 .82rem/1.3 Inter,sans-serif;color:var(--on-dark-2);margin-top:6px}
+.cover{justify-self:center;width:min(100%,360px);border-radius:10px;box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06);transform:rotate(2deg)}
+.tools{margin-top:18px;font-size:.9rem;color:var(--on-dark-2)}
+
+/* problema */
+.problem p{font-size:1.2rem;max-width:46ch;margin-top:16px;color:var(--text)}
+.problem strong{color:var(--ink)}
+
+/* método */
+.method{background:var(--paper-2)}
+.rctrf{display:grid;gap:12px;margin-top:32px;padding:0;list-style:none}
+.rctrf li{display:flex;gap:16px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.rctrf b{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:10px;background:var(--cyan);color:var(--navy);font:800 1.2rem Montserrat,sans-serif}
+.rctrf h3 span{font:500 .95rem Inter,sans-serif;color:var(--muted)}
+.rctrf p{margin-top:4px;font-size:.98rem}
+.note{margin-top:20px;font-size:1rem}
+
+/* áreas */
+.areas{display:grid;gap:14px;margin-top:32px}
+.area{border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.area .n{font:800 .8rem Montserrat,sans-serif;color:#076a80;letter-spacing:.08em}
+.area h3{margin-top:6px}
+.area p{margin-top:8px;font-size:.98rem}
+.area .count{display:inline-block;margin-top:12px;font-size:.82rem;font-weight:600;color:var(--navy-3);background:#ecebfb;border-radius:999px;padding:3px 10px}
+
+/* lista */
+.checks{display:grid;gap:14px;margin-top:28px;padding:0;list-style:none}
+.checks li{display:flex;gap:12px;align-items:flex-start}
+.checks svg{flex:none;width:22px;height:22px;margin-top:3px;color:var(--cyan)}
+.dark .checks li{color:var(--on-dark-2)}
+.dark .checks strong{color:var(--on-dark)}
+
+/* bônus */
+.bonus{background:var(--navy-2);border-radius:20px;padding:32px 22px;margin-top:8px}
+.bonus .tag{display:inline-block;background:var(--cyan);color:var(--navy);font:800 .75rem Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.bonus h2{margin-top:14px}
+
+/* para quem */
+.who{display:grid;gap:16px;margin-top:28px}
+.who div{border-left:4px solid var(--cyan);padding:4px 0 4px 16px}
+.who p{margin-top:6px}
+
+/* faq */
+.faq{margin-top:28px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 36px 18px 0;position:relative;font:700 1.05rem/1.4 Montserrat,sans-serif;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:14px;font:400 1.6rem Inter,sans-serif;color:#076a80}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 0 18px}
+
+/* final */
+.final{text-align:center}
+.final .buy{justify-content:center}
+.final .lead{margin:14px auto 0;max-width:40ch;font-size:1.1rem}
+footer{background:var(--navy);color:var(--on-dark-2);font-size:.85rem;padding:28px 0 96px;border-top:1px solid #2a2563}
+footer p+p{margin-top:8px}
+
+/* barra fixa no celular */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:10;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(19,17,57,.97);border-top:1px solid #2a2563;
+  transform:translateY(110%);transition:transform .25s ease}
+.sticky.on{transform:none}
+.sticky .price{font-size:1.35rem}
+.sticky .btn{min-height:46px;padding:10px 20px;font-size:.95rem}
+
+@media (min-width:760px){
+  section{padding:96px 0}
+  .hero{padding:80px 0 100px}
+  .hero .grid{grid-template-columns:1.15fr .85fr}
+  .hero::before{right:-12vw;top:-18vw;width:46vw;height:46vw}
+  .rctrf{grid-template-columns:repeat(5,1fr)}
+  .rctrf li{flex-direction:column}
+  .areas{grid-template-columns:repeat(2,1fr)}
+  .areas .area:last-child{grid-column:1/-1}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .bonus{padding:48px}
+  .who{grid-template-columns:repeat(3,1fr)}
+  .sticky{display:none}
+  footer{padding-bottom:28px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.cover{transform:none}}
+</style>
+</head>
+<body>
+
+<header class="hero dark">
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow">Guia prático de prompts para iniciantes</p>
+      <h1 style="margin-top:14px">O Atalho <span>da IA</span></h1>
+      <p class="lead">22 prompts prontos para copiar, preencher e ganhar tempo no dia a dia, mesmo começando do zero.</p>
+      <ul class="chips">
+        <li>22 prompts prontos</li>
+        <li>5 áreas da rotina</li>
+        <li>Roteiro de 7 dias</li>
+        <li>Bônus: planilha com 55 prompts</li>
+      </ul>
+      <div class="buy" id="topo-compra">
+        <a class="btn" href="#topo-compra">Quero o meu guia
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p class="price">R$ 19,90<small>pagamento único · e-book em PDF, 35 páginas</small></p>
+      </div>
+      <p class="tools">Funciona com ChatGPT, Claude e Gemini, inclusive nas versões gratuitas.</p>
+    </div>
+    <img class="cover" src="capa.webp" width="910" height="1100" alt="Capa do e-book O Atalho da IA, Guia Prático de Prompts para Iniciantes">
+  </div>
+</header>
+
+<main>
+  <section class="problem">
+    <div class="wrap">
+      <p class="eyebrow">O problema</p>
+      <h2 style="margin-top:12px;max-width:22ch">Você pediu algo à IA e recebeu uma resposta genérica?</h2>
+      <p>O problema quase nunca é a ferramenta. <strong>É o jeito de pedir.</strong> Uma ordem de três palavras faz a IA adivinhar o resto, e ela adivinha a resposta mais comum. O Atalho da IA ensina a pedir do jeito certo, sem jargão e sem precisar entender de tecnologia.</p>
+    </div>
+  </section>
+
+  <section class="method">
+    <div class="wrap">
+      <p class="eyebrow">O método</p>
+      <h2 style="margin-top:12px">A Fórmula R.C.T.R.F.</h2>
+      <p style="margin-top:12px;max-width:52ch">As 5 peças de um bom prompt, sempre na mesma ordem. Todos os 22 prompts do guia são montados com ela.</p>
+      <ul class="rctrf">
+        <li><b>R</b><div><h3>Papel <span>— quem a IA deve ser?</span></h3><p>Define o ponto de vista e o vocabulário.</p></div></li>
+        <li><b>C</b><div><h3>Contexto <span>— qual é o cenário?</span></h3><p>O que a máquina não tem como adivinhar.</p></div></li>
+        <li><b>T</b><div><h3>Tarefa <span>— o que fazer?</span></h3><p>Um verbo de ação direto.</p></div></li>
+        <li><b>R</b><div><h3>Restrições <span>— o que evitar?</span></h3><p>Limites contra respostas longas e clichês.</p></div></li>
+        <li><b>F</b><div><h3>Formato <span>— como entregar?</span></h3><p>Tabela, lista, mensagem de WhatsApp.</p></div></li>
+      </ul>
+      <p class="note">No livro, um exemplo de antes e depois mostra a fórmula transformando um pedido vago numa mensagem pronta para enviar.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">A biblioteca</p>
+      <h2 style="margin-top:12px">22 prompts prontos, em 5 áreas da rotina</h2>
+      <p style="margin-top:12px;max-width:56ch">Você só troca o que está entre [colchetes] pela sua situação. Cada prompt traz frases para continuar a conversa quando a primeira resposta não fica boa.</p>
+      <div class="areas">
+        <article class="area"><p class="n">01</p><h3>Produtividade e organização</h3><p>Resumir e-mails, planejar o dia em blocos, resumir documentos longos e decidir entre duas opções.</p><span class="count">5 prompts</span></article>
+        <article class="area"><p class="n">02</p><h3>Redação profissional</h3><p>Revisar o tom, montar propostas, preparar conversas difíceis, pautas e atas.</p><span class="count">4 prompts</span></article>
+        <article class="area"><p class="n">03</p><h3>Conteúdo e redes sociais</h3><p>Ideias de posts, roteiros de Reels, carrosséis, legendas e títulos.</p><span class="count">5 prompts</span></article>
+        <article class="area"><p class="n">04</p><h3>Vendas e atendimento</h3><p>Responder ao "achei caro", prospectar, reativar clientes sumidos e resolver reclamações.</p><span class="count">4 prompts</span></article>
+        <article class="area"><p class="n">05</p><h3>Estudos e aprendizado</h3><p>Entender assuntos difíceis, treinar para entrevista, montar plano de estudos e traduzir com naturalidade.</p><span class="count">4 prompts</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap two">
+      <div>
+        <p class="eyebrow">E mais</p>
+        <h2 style="margin-top:12px">O que vem junto no guia</h2>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Alerta de privacidade:</strong> o que nunca colar na IA (CPF, dados de clientes, informação confidencial).</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Checklist "Filtro dos 5 Segundos"</strong> para conferir a resposta antes de usar.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Glossário sem complicação.</strong></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Roteiro prático de 7 dias,</strong> com uma missão por dia.</span></li>
+        </ul>
+      </div>
+      <div class="bonus">
+        <span class="tag">Bônus</span>
+        <h2>Planilha Montadora de Prompts</h2>
+        <ul class="checks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>55 prompts:</strong> os 22 do livro e mais 33 exclusivos da planilha.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Preenchedor:</strong> você responde aos campos e a planilha devolve o prompt pronto para copiar.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Montador:</strong> monta um prompt novo seguindo o método R.C.T.R.F.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Meus Prompts</strong> para guardar os seus modelos. No Google Planilhas, numa cópia que é só sua.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Para quem é</p>
+      <h2 style="margin-top:12px">Feito para quem está começando</h2>
+      <div class="who">
+        <div><h3>Iniciantes</h3><p>Quem quer usar a IA no trabalho e na rotina sem gastar horas aprendendo.</p></div>
+        <div><h3>Sem assinatura paga</h3><p>As versões gratuitas do ChatGPT, do Claude e do Gemini bastam para aplicar o guia.</p></div>
+        <div><h3>Sem jargão</h3><p>Não precisa entender de tecnologia. Precisa saber pedir, e o guia ensina.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="method">
+    <div class="wrap" style="max-width:780px">
+      <p class="eyebrow">Dúvidas</p>
+      <h2 style="margin-top:12px">Perguntas frequentes</h2>
+      <div class="faq">
+        <details><summary>Como recebo o guia?</summary><p>Depois da confirmação do pagamento, você recebe o e-book em PDF pela Cakto, a plataforma onde a compra é feita.</p></details>
+        <details><summary>Preciso pagar alguma IA?</summary><p>Não. Os prompts funcionam nas versões gratuitas do ChatGPT, do Claude e do Gemini.</p></details>
+        <details><summary>Serve para qualquer área?</summary><p>Os prompts cobrem cinco áreas: produtividade, redação profissional, conteúdo e redes sociais, vendas e atendimento, e estudos. Em todos, você troca os [colchetes] pela sua situação.</p></details>
+        <details><summary>Como acesso a planilha bônus?</summary><p>O guia traz o link. Ao abrir, o Google pede para fazer uma cópia, que fica na sua conta e é só sua. Precisa de uma conta Google.</p></details>
+        <details><summary>A IA sempre acerta?</summary><p>Não. As respostas podem variar entre ferramentas e podem conter erros. O guia ensina a conferir números, datas e fatos importantes antes de usar uma resposta.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark final">
+    <div class="wrap">
+      <h2>Comece hoje: um prompt por dia</h2>
+      <p class="lead">Em uma semana, você terá os seus próprios modelos salvos.</p>
+      <div class="buy" style="margin-top:28px">
+        <a class="btn" href="#topo-compra">Quero o meu guia
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p class="price">R$ 19,90<small>pagamento único</small></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>O Atalho da IA — Guia Prático de Prompts para Iniciantes. Pagamento processado pela Cakto.</p>
+    <p>ChatGPT, Claude e Gemini são marcas de seus respectivos donos. Este guia não tem vínculo com essas empresas.</p>
+  </div>
+</footer>
+
+<div class="sticky" id="barra" aria-hidden="true">
+  <p class="price">R$ 19,90</p>
+  <a class="btn" href="#topo-compra" tabindex="-1">Quero o meu guia</a>
+</div>
+
+<script>
+(function(){
+  var alvo=document.getElementById('topo-compra'),barra=document.getElementById('barra');
+  if(!('IntersectionObserver' in window)){barra.classList.add('on');return;}
+  new IntersectionObserver(function(e){
+    var on=!e[0].isIntersecting && e[0].boundingClientRect.top<0;
+    barra.classList.toggle('on',on); barra.setAttribute('aria-hidden',String(!on));
+  }).observe(alvo);
+})();
+</script>
+</body>
+</html>
