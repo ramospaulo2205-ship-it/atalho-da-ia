@@ -175,6 +175,17 @@ section{padding:80px 0}
 .faq summary:focus-visible{outline:2px solid var(--cyan-ink);outline-offset:4px;border-radius:4px}
 .faq details p{padding:0 0 20px;max-width:64ch}
 
+/* chamadas no meio da página */
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:40px;padding:22px 24px;border-radius:var(--radius);background:var(--paper);border:1px solid var(--line)}
+.cta p{flex:1 1 260px;font-size:.98rem;color:var(--text)}
+.cta p b{color:var(--ink)}
+.btn-ink{background:var(--navy);color:#fff}
+.btn-ink:focus-visible{outline-color:var(--cyan-ink)}
+.dark .cta{background:rgba(255,255,255,.04);border-color:#3a3580}
+.dark .cta p{color:var(--on-dark-2)}
+.dark .cta p b{color:var(--on-dark)}
+.sticky .nome{display:none}
+
 /* final */
 .final{text-align:center;position:relative;overflow:hidden;padding:88px 0}
 .final .mini{width:120px;margin:0 auto 28px;border-radius:4px 8px 8px 4px;box-shadow:20px 24px 40px -16px rgba(0,0,0,.6);transform:rotate(-4deg)}
@@ -217,8 +228,8 @@ footer p+p{margin-top:8px}
   .bonus{padding:44px}
   .who{grid-template-columns:repeat(3,1fr);gap:32px}
   .author .card{grid-template-columns:auto 1fr;gap:36px;padding:40px}
-  .sticky{display:none}
-  footer{padding-bottom:28px}
+  .sticky{justify-content:center;gap:28px}
+  .sticky .nome{display:block;color:var(--on-dark);font:700 1rem Montserrat,sans-serif}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -309,6 +320,11 @@ footer p+p{margin-top:8px}
         </article>
       </div>
       <p class="note">Esse exemplo está na página 8 do guia. Os 22 prompts já vêm montados assim: você só preenche os [colchetes].</p>
+      <div class="cta reveal">
+        <a class="btn btn-ink" href="https://pay.cakto.com.br/qgr2vdz">Quero o meu guia
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p><b>Os 22 prompts prontos, por R$ 19,90.</b> Pagamento único, com garantia de 7 dias.</p>
+      </div>
     </div>
   </section>
 
@@ -323,6 +339,11 @@ footer p+p{margin-top:8px}
         <li class="reveal"><figure><img src="img/pagina-34.webp" width="720" height="1019" loading="lazy" alt="Página 34 do guia: Roteiro Prático de 7 Dias"><figcaption><b>Roteiro de 7 dias</b>Uma missão por dia.</figcaption></figure></li>
       </ul>
       <p class="swipe" aria-hidden="true">Arraste para o lado para ver as outras páginas →</p>
+      <div class="cta reveal">
+        <a class="btn btn-ink" href="https://pay.cakto.com.br/qgr2vdz">Quero o meu guia
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p><b>São 35 páginas em PDF.</b> O guia é liberado depois da confirmação do pagamento.</p>
+      </div>
     </div>
   </section>
 
@@ -359,6 +380,13 @@ footer p+p{margin-top:8px}
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Montador:</strong> monta um prompt novo seguindo o método R.C.T.R.F.</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg><span><strong>Meus Prompts</strong> para guardar os seus modelos. No Google Planilhas, numa cópia que é só sua.</span></li>
         </ul>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="cta reveal">
+        <a class="btn" href="https://pay.cakto.com.br/qgr2vdz">Quero o meu guia
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p><b>Guia + planilha bônus com 55 prompts, por R$ 19,90.</b> Pix ou cartão.</p>
       </div>
     </div>
   </section>
@@ -411,7 +439,7 @@ footer p+p{margin-top:8px}
       <img class="mini" src="capa.webp" width="910" height="1100" loading="lazy" alt="">
       <h2>Comece hoje: um prompt por dia</h2>
       <p class="lead">Em uma semana, você terá os seus próprios modelos salvos.</p>
-      <div class="buy" style="margin-top:28px">
+      <div class="buy" id="final-compra" style="margin-top:28px">
         <a class="btn" href="https://pay.cakto.com.br/qgr2vdz">Quero o meu guia
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <p class="price">R$ 19,90<small>pagamento único</small></p>
@@ -433,6 +461,7 @@ footer p+p{margin-top:8px}
 </footer>
 
 <div class="sticky" id="barra" aria-hidden="true">
+  <p class="nome">O Atalho da IA</p>
   <p class="price">R$ 19,90</p>
   <a class="btn" href="https://pay.cakto.com.br/qgr2vdz" tabindex="-1">Quero o meu guia</a>
 </div>
@@ -442,13 +471,19 @@ footer p+p{margin-top:8px}
   var reduz=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   var temIO='IntersectionObserver' in window;
 
-  var alvo=document.getElementById('topo-compra'),barra=document.getElementById('barra');
+  // a barra fixa aparece depois que o botão do topo sai da tela e some quando o botão do fim aparece
+  var topo=document.getElementById('topo-compra'),fim=document.getElementById('final-compra'),barra=document.getElementById('barra');
   if(!temIO){barra.classList.add('on');barra.setAttribute('aria-hidden','false');}
-  else new IntersectionObserver(function(e){
-    var on=!e[0].isIntersecting && e[0].boundingClientRect.top<0;
-    barra.classList.toggle('on',on); barra.setAttribute('aria-hidden',String(!on));
-    barra.querySelector('a').tabIndex=on?0:-1;
-  }).observe(alvo);
+  else{
+    var passouTopo=false,noFim=false;
+    var atualiza=function(){
+      var on=passouTopo&&!noFim;
+      barra.classList.toggle('on',on); barra.setAttribute('aria-hidden',String(!on));
+      barra.querySelector('a').tabIndex=on?0:-1;
+    };
+    new IntersectionObserver(function(e){ passouTopo=!e[0].isIntersecting&&e[0].boundingClientRect.top<0; atualiza(); }).observe(topo);
+    new IntersectionObserver(function(e){ noFim=e[0].isIntersecting; atualiza(); }).observe(fim);
+  }
 
   var els=document.querySelectorAll('.reveal');
   if(reduz||!temIO){els.forEach(function(el){el.classList.add('in');});}
