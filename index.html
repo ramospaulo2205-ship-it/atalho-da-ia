@@ -457,14 +457,28 @@ footer p+p{margin-top:8px}
     els.forEach(function(el){io.observe(el);});
   }
 
-  // o vídeo só carrega e toca (uma vez, parando no último quadro) quando a faixa aparece; com movimento reduzido fica o quadro parado
+  // o vídeo carrega e toca quando metade da faixa aparece; ao terminar, para 3,5 s na seta, some no azul do fundo
+  // (mesma cor do vídeo) e recomeça enquanto estiver à vista; fora da tela pausa; com movimento reduzido fica o quadro parado
   var v=document.getElementById('motion-video');
   if(v&&!reduz&&temIO){
+    var visivel=false,espera=null;
+    v.style.transition='opacity .6s ease';
+    var tocar=function(){ var p=v.play(); if(p&&p.catch)p.catch(function(){}); };
+    v.addEventListener('ended',function(){
+      clearTimeout(espera);
+      espera=setTimeout(function(){
+        if(!visivel)return;
+        v.style.opacity='0';
+        setTimeout(function(){ v.currentTime=0; v.style.opacity='1'; if(visivel)tocar(); },650);
+      },3500);
+    });
     new IntersectionObserver(function(es){
       es.forEach(function(x){
-        if(x.isIntersecting && !v.dataset.tocou){ v.dataset.tocou='1'; v.preload='auto'; var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
+        visivel=x.isIntersecting;
+        if(visivel){ if(v.preload!=='auto'){v.preload='auto';} if(v.ended)v.currentTime=0; tocar(); }
+        else { v.pause(); clearTimeout(espera); v.style.opacity='1'; }
       });
-    },{threshold:.25}).observe(v.parentElement);
+    },{threshold:.5}).observe(v.parentElement);
   }
 })();
 </script>
